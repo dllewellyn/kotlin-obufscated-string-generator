@@ -31,7 +31,10 @@ class ObufscatedGeneratorCommand : Runnable {
             key!!
         }
 
-        println("Key: $keyTouse Obfuscated string ${xorObfuscator(keyTouse, value!!)}")
+        val obfuscatedValue = xorObfuscator(keyTouse, value!!)
+        println("Key: $keyTouse Obfuscated string $obfuscatedValue")
+        println()
+        println("\"$obfuscatedValue\".deobfuscate(\"$keyTouse\")")
 
     }
 
